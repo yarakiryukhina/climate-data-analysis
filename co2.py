@@ -36,11 +36,9 @@ world_df = df_owid[world]
 
 heatmap = pd.pivot(
             countries_df[countries_df.year >= 1990],
-            values=['share_global_co2', 'co2', 'co2_per_capita'],
+            values=['share_global_co2', 'co2_per_capita'],
             index=['country', 'iso_code'],
             columns=['year'])
-
-heatmap['co2'] = round(heatmap.co2, 1)
 
 heatmap_js = {}
 
